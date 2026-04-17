@@ -88,6 +88,15 @@ Use this section to document the experiments you ran. For example:
 ### CLI Output
 ![CLI Output](images/CLI_Output.png)
 
+
+### Stress Test Profiles
+![High Energy Pop](images/highEnergyPop.png)
+![Chill Lofi](images/chillLofi.png)
+![Deep Intense Rock](images/deepIntenseRock.png)
+
+### Experiment: Weight Shift (Energy vs Genre)
+I doubled the importance of energy and reduced genre weight. After this change, recommendations shifted toward high-energy songs even when they did not match the user's genre preference. This shows that energy has a strong influence on ranking and can override categorical preferences like genre.
+
 ---
 
 ## Limitations and Risks
