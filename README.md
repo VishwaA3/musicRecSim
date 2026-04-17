@@ -29,6 +29,17 @@ Some prompts to answer:
 
 You can include a simple diagram or bullet list if helpful.
 
+This design explained in plain language is that real world recommendation systems such as Spotify or YouTube often use large amounts of user data to predict what someone will like. They learn from other users' likes, skips, and playlists, along with content-filtering, and analyzing songs and their genres, mood, and energy. I used a content-based design, where I compare the user's performances directly to the song attributes and assign a score based on how well the match is. Songs that match the users taste better are ranked high and recommended more often. 
+Each song used features such as the genre, mood, energy, tempo_bpm, valence, danceability, and acousticness. 
+The UserProfile stores information such as favorite_genre, favorite_mood, target_energy, and likes_acoustic. 
+The Recommender would compute a score for each song using songs to gain points to see if their genre and mood would match the user and their preferences. The songs scoring increase when their energy level is close to the user's target energy. All songs are scored from highest to lowest, and the top results are returned. 
+
+Algorithm Recipe:
++2.0 points for genre match  
++1.0 point for mood match  
+Energy similarity = (1 - absolute difference between song energy and user energy)
+Songs are scored individually and then ranked from highest to lowest.
+
 ---
 
 ## Getting Started
@@ -73,6 +84,9 @@ Use this section to document the experiments you ran. For example:
 - What happened when you changed the weight on genre from 2.0 to 0.5
 - What happened when you added tempo or valence to the score
 - How did your system behave for different types of users
+
+### CLI Output
+![CLI Output](images/CLI_Output.png)
 
 ---
 
